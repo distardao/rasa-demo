@@ -340,8 +340,8 @@ responses:
       title: Try out Rasa in the online Rasa Playground
     - payload: /install_rasa
       title: Install Rasa on your own computer
-    - payload: /trigger_response_selector{{"retrieval_intent":"chitchat/ask_whatisrasa"}}
-      title: Find out more about Rasa
+    # - payload: /trigger_response_selector{{"retrieval_intent":"chitchat/ask_whatisrasa"}}
+    #   title: Find out more about Rasa
   utter_playground_intro:
   - text: "In the [Rasa Playground](https://rasa.com/docs/rasa/playground) you can\n  build a Rasa prototype entirely online. Once you've built your prototype, you can talk to\n  your bot online and download your project to continue developing it locally."
   utter_ask_playground_help:
