@@ -21,3 +21,6 @@ events.*
 terms
 docker-local
 .pytype/
+.venv
+.rasa
+__pycache__
