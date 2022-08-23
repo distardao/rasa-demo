@@ -24,3 +24,5 @@ docker-local
 .venv
 .rasa
 __pycache__
+.config
+.keras

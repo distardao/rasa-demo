@@ -9,6 +9,7 @@ sudo docker run --net=rasa-bot-demo -p 8000:8000 rasa/duckling
 sudo docker run --net=rasa-bot-demo rasa-action-server
 
 sudo docker run --net=rasa-bot-demo rasa-server train
+sudo docker run --user 1000 -v $(pwd):/app rasa/rasa:3.2.0-full train --domain domain.yml --data data --out models
 sudo docker run --net=rasa-bot-demo rasa-server
 
-sudo docker run --net=rasa-bot-demo -it -e NGROK_AUTHTOKEN=xyz ngrok/ngrok:alpine http 80
+sudo docker run --net=rasa-bot-demo -it -e NGROK_AUTHTOKEN=xyz ngrok/ngrok:alpine http 5005
