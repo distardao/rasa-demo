@@ -1,0 +1,14 @@
+sudo docker network create rasa-bot-demo
+
+sudo docker build -t rasa-action-server -f Dockerfile.rasaaction .
+
+sudo docker build -t rasa-server -f Dockerfile.rasa .
+
+sudo docker run --net=rasa-bot-demo -p 8000:8000 rasa/duckling
+
+sudo docker run --net=rasa-bot-demo rasa-action-server
+
+sudo docker run --net=rasa-bot-demo rasa-server train
+sudo docker run --net=rasa-bot-demo rasa-server
+
+sudo docker run --net=rasa-bot-demo -it -e NGROK_AUTHTOKEN=xyz ngrok/ngrok:alpine http 80

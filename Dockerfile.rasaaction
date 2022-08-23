@@ -48,3 +48,4 @@ USER 1001
 
 # Start the action server
 CMD ["start", "--actions", "actions.actions"]
+# CMD ["start"]
