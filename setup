@@ -2,14 +2,13 @@ sudo docker network create rasa-bot-demo
 
 sudo docker build -t rasa-action-server -f Dockerfile.rasaaction .
 
-sudo docker build -t rasa-server -f Dockerfile.rasa .
+# sudo docker build -t rasa-server -f Dockerfile.rasa .
 
-sudo docker run --net=rasa-bot-demo -p 8000:8000 rasa/duckling
+sudo docker run -v $(pwd):/app rasa/rasa:3.2.0-full train --domain domain.yml --data data --out models
 
-sudo docker run --net=rasa-bot-demo rasa-action-server
+sudo docker run --name=rasa-demo-duckling --net=rasa-bot-demo -p 8000:8000 rasa/duckling
 
-sudo docker run --net=rasa-bot-demo rasa-server train
-sudo docker run --user 1000 -v $(pwd):/app rasa/rasa:3.2.0-full train --domain domain.yml --data data --out models
-sudo docker run --net=rasa-bot-demo rasa-server
+sudo docker run --name=rasa-demo-action-server --net=rasa-bot-demo -p 5055:5055 rasa-action-server
+sudo docker run --name=rasa-demo-server --net=rasa-bot-demo -p 5005:5005 -v $(pwd):/app rasa/rasa:3.2.0-full run
 
-sudo docker run --net=rasa-bot-demo -it -e NGROK_AUTHTOKEN=xyz ngrok/ngrok:alpine http 5005
+sudo docker run --net=rasa-bot-demo -it -e NGROK_AUTHTOKEN=xyz ngrok/ngrok:alpine http rasa-demo-server:5005
