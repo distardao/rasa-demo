@@ -35,7 +35,7 @@
   <h3 align="center">Sara</h3>
 
   <p align="center">
-    The document describes in detail how to install and use sara bot 
+    The document describes in detail how to install and use Sara bot 
     <br />
     <a href="https://github.com/distardao/rasa-demo"><strong>Document details »</strong></a>
     <br />
@@ -233,6 +233,7 @@ This project contains main files and directories:
 * Dockerfile.rasaaction: The docker file defines the environment that action server run from. 
 * requirements.txt: This file contains packages needed to run project.
 
+<p align="right">(<a href="#top">Back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
