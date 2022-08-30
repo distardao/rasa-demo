@@ -231,6 +231,7 @@ This project contains main files and directories:
 * credentials.yml: This file define necessary credentials used when interacting with external system.
 * endpoints.yml: This file define all endpoints that the main server shoud know, such as action server, ...
 * Dockerfile.rasaaction: The docker file defines the environment that action server run from. 
+* requirements.txt: This file contains packages needed to run project.
 
 
 <!-- USAGE EXAMPLES -->
